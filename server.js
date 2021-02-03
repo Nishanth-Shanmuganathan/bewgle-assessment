@@ -10,6 +10,12 @@ app.use(bodyParser.json())
 
 app.use('/process', processController)
 
-app.listen(3000, () => {
-    console.log('Listening at 3000');
+mongoose.connect('mongodb+srv://Bewgle_Admin:w3mhm580IxnpUJiE@bewgle-assessment.x8ynk.mongodb.net/process?retryWrites=true&w=majority', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}, () => {
+    app.listen(3000, () => {
+        console.log('Listening at 3000');
+    })
 })
+
